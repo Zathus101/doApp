@@ -20,7 +20,10 @@
 
 .information{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start;
   padding-left: 10%;
+  width: 34%; 
 }
+
 

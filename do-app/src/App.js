@@ -9,8 +9,16 @@ function App() {
       </header>
 
       <div class="information">
-        <label for="first">Enter Your First Name</label>
+        
+        <label for="name">Enter Your Name:</label>
+        <input type ="text" id="name" placeholder="John Doe" ></input>
+        <label for="title" >Enter the Title:</label>
+        <input type ="text" id="title" placeholder="Activity"></input>
+        <label for ="description">Enter Information</label>
+        <textarea id ="description" placeholder="What Id like to do is?" rows='10' cols="30"></textarea>
+        
       </div>
+
     </div>
   );
 }
