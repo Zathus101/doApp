@@ -23,7 +23,24 @@
   flex-direction: column;
   align-items: flex-start;
   padding-left: 10%;
-  width: 34%; 
+  width: 100%; 
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: normal;
+  margin-top: 10%;
+}
+.what{
+  width: 35%;
+}
+
+.delete{
+  width: 10%;
+  margin-left: 10%;
+  margin-top: 3%;
 }
 
 
