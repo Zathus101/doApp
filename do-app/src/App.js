@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { useState, useEffect } from "react";
+import { useState, useEffect,  } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Container } from 'react-bootstrap';
 <link />
@@ -29,20 +29,41 @@ function App() {
     newSetInfo([
       ...newInfo,
       info
+
     ])
 
   }
- 
+  
+  const del = (index) => {
+
+    newSetLog([
+      ...newLog.splice(1)
+      
+
+    ])
+
+    newSetName([
+      ...newName.splice(1)
+      
+    ])
+
+    newSetInfo([
+      ...newInfo.splice(1)
+      
+
+    ])
+    
+  }
+    
+    
   useEffect(() => {
+
     console.log(newName);
     console.log(newLog);
     console.log(newInfo);
   }, [newName, newLog, newInfo])
 
-  const list = newName.forEach((value, index) => {
-    return (newName[index])
-  })
-  
+ 
   console.log(newName);
   return (
     <div class="container">
@@ -62,21 +83,22 @@ function App() {
           <textarea textarea class="form-control" rows="3" placeholder="What Id like to do is?" onChange={e => setInfo(e.target.value)} ></textarea>
         </div>
         <div class="selection">
-          
-            <Button  onClick={handleSubmit} class="btn btn-secondary btn-lg">add</Button>
-            <Button   class="btn btn-secondary btn-lg" align="right">delete</Button>
-
-          
-          <div class="form-check">
-          {newName.map((value, index) => {
-            return (
-              <div class="form-check">
-                {value + " " + newLog[index] + " " + newInfo[index]}
-              </div>
-            )
-          })}
+          <div classname="btn">
+            <Button onClick={handleSubmit} class="btn btn-secondary btn-lg">add</Button>
+            
           </div>
 
+          <div class="form-check">
+            {newName.map((value, index) => {
+              return (
+                <div class="form-check">
+                  
+                  {value + " " + newLog[index] + " " + newInfo[index]}
+                  <Button onClick={()=> del(index)} class="btn btn-secondary btn-lg" align="right">delete</Button>
+                </div>
+              )
+            })}
+          </div>
         </div>
       </div>
     </div>
